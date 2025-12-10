@@ -58,8 +58,8 @@ enum DeliveryType {
 /**
  * Report is the only message sent to the RoboCommand server
  * Report message contains:
- * team_id: unique team identifier (i.e. RNRB)
- * vehicle_id: unique vehicle identifier (i.e. RN1, RN2)
+ * team_id: unique team identifier (i.e. RNRB, provided in Team Handbook)
+ * vehicle_id: unique vehicle identifier (i.e. S1, S2, where "S" signals Surface Vessel)
  * seq: monotonically increasing sequence count
  * sent_at: timestamp of message transmission
  * body: one of the listed body messages
