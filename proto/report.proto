@@ -55,6 +55,12 @@ enum DeliveryType {
    DELIVERY_BALL = 2; 
 }
 
+enum PatrolBoatActionType {
+  PATROL_BOAT_ACTION_UNKNOWN = 0;
+  PATROL_BOAT_ACTION_STOPPING = 1;
+  PATROL_BOAT_ACTION_RESUMING = 2;
+}
+
 /**
  * Report is the only message sent to the RoboCommand server
  * Report message contains:
@@ -77,6 +83,7 @@ message Report {
     ObjectDelivery object_delivery = 13;
     Docking docking = 14;
     SoundSignal sound_signal = 15;
+    PatrolBoat patrol_boat = 16;
   }
 }
 
@@ -169,5 +176,13 @@ message SoundSignal {
   SignalType signal_type = 1;
   uint32 frequency_hz = 2;
   TaskType assigned_task = 3;
+}
+
+/**
+ * Patrol Boat
+ * patrol_boat_action_type: What action the team ASV is performing in response to the patrol boat
+ */
+message PatrolBoat {
+  PatrolBoatActionType patrol_boat_action_type = 1;
 }
 
